@@ -14,6 +14,13 @@ const mainReducer = (state = initialState, action) => {
                 ...state,
                 favorites: state.favorites.filter((song, id) => id !== action.payload)
             }
+
+            case 'ADD_TO_PLAYER':
+            return {
+                ...state,
+                isPlaying: action.payload
+            }
+
         default:
             return state
     }

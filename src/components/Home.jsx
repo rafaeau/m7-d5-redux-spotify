@@ -9,7 +9,8 @@ import { connect } from 'react-redux';
 import Loader from './Loader'
 
 const mapStateToProps = (state) => ({
-    favorites: state.favorites
+    favorites: state.favorites,
+    isPlaying: state.isPlaying
 })
 
 const mapDispatchToProps = (dispatch) => ({
@@ -23,6 +24,12 @@ const mapDispatchToProps = (dispatch) => ({
         dispatch({
             type: 'DEL_FROM_FAVORITES',
             payload: id
+        })
+    },
+    addToPlayer: (song) => {
+        dispatch({
+            type: 'ADD_TO_PLAYER',
+            payload: song
         })
     },
 })
@@ -63,7 +70,7 @@ const Home = (props) => {
                     isLoading ? <Loader /> : artists.slice(0, 8).map((album) => {
                         return (
                             <>
-                                <Song src={album.album.cover_medium} key={album.album.id} id={album.album.id} title={album.album.title} artist={album.artist.name} artistId={album.artist.id}/>
+                                <Song album={album} src={album.album.cover_medium} key={album.album.id} id={album.album.id} title={album.album.title} artist={album.artist.name} artistId={album.artist.id} addToPlayer={props.addToPlayer}/>
                                     <Button className='fav-btn btn-sm ml-2' onClick={() => {
                                         props.addToFavorites(album)
                                     }}>

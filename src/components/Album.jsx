@@ -18,17 +18,22 @@ const Album = (props) => {
         <div className="album-wrap">
             <div className="album-left-info mt-5">
                 <img src={album.cover_medium} alt="cover" />
-                <h3>{album.title}</h3>
+                <h3 className="mt-2">{album.title}</h3>
             </div>
             <div className="album-right-info mt-5">
                 {album?.tracks?.data.map((song) => 
-                    <span className="d-flex flex-wrap">
+                    <span className="d-flex flex-wrap justify-content-between">
                         <div>
                         <p className="mr-5">{song.title}</p>
-                        <p className="ml-5">{song.artist.name}</p>
+                        <p className="mt-n3 text-muted">{song.artist.name}</p>
                         </div>
                         <div>
-                        <p>{song.duration / 60}</p>
+                        <small className="duration mr-5" style={{ color: "white" }}>
+                        {Math.floor(parseInt(song.duration) / 60)}:
+                        {parseInt(song.duration) % 60 < 10
+                            ? "0" + (parseInt(song.duration) % 60)
+                            : parseInt(song.duration) % 60}
+                        </small>
                         </div>
                     </span>
                 )}

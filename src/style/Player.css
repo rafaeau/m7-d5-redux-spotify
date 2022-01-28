@@ -4,6 +4,7 @@
 }
 .player-icons {
     width: 13%;
+    margin-left: 200px;
 }
 .player-icons i {
     color: rgb(163, 163, 163);
@@ -16,7 +17,13 @@
     width: 50%;
 }
 .slider {
-    width: 100%;
+    margin-right: 100px;
+    margin-bottom: 15px;
+    width: 120%;
     height: 2px;
     background-color: rgba(163, 163, 163, 0.329);
+}
+
+.title-player {
+    font-size: 12px;
 }
