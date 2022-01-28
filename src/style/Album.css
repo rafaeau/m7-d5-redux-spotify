@@ -1,0 +1,23 @@
+.album-wrap {
+    color:white;
+    padding-left: 25px;
+    padding-right: 25px;
+    width: calc(100vw - 230px);
+    height: 100vh;
+    position: absolute;
+    left: 0px;
+    background: rgb(3,0,46);
+    background: linear-gradient(0deg, rgba(3,0,46,1) 0%, rgba(0,52,6,1) 100%);
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.album-left-info {
+    width: 40%;
+    justify-content: center;
+}
+
+.album-right-info {
+    width: 60%;
+}

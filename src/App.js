@@ -21,9 +21,9 @@ function App() {
           </Col>
           <Col md={10}>
             <Routes>
-                <Route path='/' element={<Home />} />
-                <Route path='/album'  element={<Album />} />
-                <Route path='/artist' element={<Artist />} /> 
+                <Route exact path='/' element={<Home />} />
+                <Route exact path='/album/:id' element={<Album/>} />
+                <Route exact path='/artist/:id' element={<Artist />} /> 
             </Routes>
           </Col>
           <Col md={12} className='position-fixed' style={{bottom: '0px'}} >
